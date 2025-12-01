@@ -3,9 +3,7 @@
 > **No Electron. No Bloat. Just Sound.**
 > *The spiritual successor to the golden age of media players, re-engineered for the modern streaming era.*
 
-[](https://www.google.com/search?q=https://github.com/makalin/reamp)
-[](https://www.google.com/search?q=https://github.com/makalin/reamp)
-[](https://www.google.com/search?q=https://github.com/makalin/reamp)
+![ReAmp Screenshot](assets/screen1.png)
 
 ## 📜 Manifest
 

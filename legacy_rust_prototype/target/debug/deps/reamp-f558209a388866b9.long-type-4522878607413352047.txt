@@ -1,0 +1,2 @@
+Inspect<SamplesConverter<Decoder<BufReader<File>>, f32>, {closure@src/audio.rs:58:14: 58:27}>
+Inspect<SamplesConverter<Decoder<BufReader<File>>, f32>, {closure@src/audio.rs:58:14: 58:27}>: Source

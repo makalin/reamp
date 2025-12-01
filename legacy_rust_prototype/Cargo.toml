@@ -1,0 +1,12 @@
+[package]
+name = "reamp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rodio = "0.17"
+minifb = "0.24"
+image = "0.25.9"
+rfd = "0.15.4"
+spectrum-analyzer = "1.7.0"
+font8x8 = "0.3"
