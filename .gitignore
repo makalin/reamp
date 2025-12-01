@@ -5,3 +5,12 @@ Cargo.lock
 .idea
 .vscode
 *.swp
+
+# Node.js / Vite
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+*.log
+.cache/
