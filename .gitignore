@@ -14,3 +14,12 @@ dist/
 .env.*.local
 *.log
 .cache/
+
+# C++ Build
+build/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe

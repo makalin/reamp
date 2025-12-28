@@ -13,7 +13,7 @@ We believe a music player should open instantly, use minimal RAM, and look like 
 
 ## ✨ Key Features
 
-  * **Truly Native & Blazing Fast:** Written in low-level code (C++/Rust) for zero latency. Uses a fraction of the RAM of modern streaming apps.
+  * **Truly Native & Blazing Fast:** Written in low-level C++ for zero latency. Uses a fraction of the RAM of modern streaming apps.
   * **Retro GUI Engine:** Support for classic `.wsz` style skins, bitmap fonts, and pixel-perfect layouts.
   * **The Hybrid Engine:**
       * **Local Playback:** FLAC, MP3, OGG, WAV support with audiophile-grade decoding.
@@ -28,9 +28,10 @@ We believe a music player should open instantly, use minimal RAM, and look like 
 
 ReAmp is built on the metal, not on Chrome.
 
-  * **Core Audio Engine:** Rust / C++ (Miniaudio backend)
-  * **GUI:** Native rendering (Metal for Mac, DirectX for Windows, Vulkan for Linux/Android).
-  * **Scripting:** Lua integration for lightweight skin scripting and plugins.
+  * **Core Audio Engine:** C++ with Miniaudio backend
+  * **GUI:** SDL2 + OpenGL (Metal/DirectX/Vulkan support planned)
+  * **Scripting:** Lua integration for lightweight skin scripting and plugins
+  * **Build System:** CMake
 
 -----
 
@@ -38,21 +39,53 @@ ReAmp is built on the metal, not on Chrome.
 
 ### Prerequisites
 
-  * **Windows:** C++ Build Tools / Rust Cargo
-  * **Mac:** Xcode Command Line Tools
-  * **Spotify:** Client ID (for API integration)
+  * **macOS:** Xcode Command Line Tools, CMake, SDL2, Lua
+  * **Windows:** Visual Studio 2019+ or MinGW, CMake, SDL2, Lua
+  * **Linux:** Build tools (gcc/clang), CMake, SDL2, Lua, OpenGL development libraries
+  * **Spotify:** Client ID (for API integration - future feature)
 
 ### Installation
 
-Clone the repo and build from source:
+#### Quick Start (macOS/Linux)
 
 ```bash
 git clone https://github.com/makalin/reamp.git
 cd reamp
-# Build the core engine
-make build-core
-# Run the desktop client
+
+# Install dependencies (macOS with Homebrew)
+make install-deps
+
+# Or manually:
+# macOS: brew install sdl2 lua cmake
+# Linux: sudo apt-get install libsdl2-dev liblua5.3-dev cmake build-essential
+
+# Build
+make build
+
+# Run
+make run
+# Or directly: ./build/bin/reamp
+```
+
+#### Manual Build
+
+```bash
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake --build . -j$(nproc)
 ./bin/reamp
+```
+
+#### Windows
+
+```powershell
+# Install dependencies via vcpkg or manually
+# Then:
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+cmake --build . --config Release
+.\bin\Release\reamp.exe
 ```
 
 -----
